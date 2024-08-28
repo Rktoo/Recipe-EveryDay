@@ -8,7 +8,7 @@ export default function DefaultLayout() {
     <>
         <Header />
         <main 
-        className='max-w-6xl mx-auto px-10 my-4'
+        className="max-w-6xl mx-auto my-4 px-10 flex flex-col justify-center"
         >
             <Outlet/>
         </main>

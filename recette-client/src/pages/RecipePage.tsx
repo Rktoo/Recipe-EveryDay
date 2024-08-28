@@ -39,9 +39,9 @@ export default function RecipePage() {
   return (
     <div>
         { recipe ? (
-            <div>
+              <div >
                 <h1>{recipe.title}</h1>
-                  <img src="https://placehold.jp/3d4070/ffffff/150x150.png" alt={recipe.title} />
+                  <img src="https://placehold.jp/3d4070/ffffff/150x150.png" alt={recipe.title} width={200} height={200}/>
                 <h2 className='text-lg font-semibold'>Ingrédients</h2>
                 <ul className='font-thin'>
                     {

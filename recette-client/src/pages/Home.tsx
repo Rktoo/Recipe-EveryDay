@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import useFetchRecipes from '../utils/useFetchRecipes';
 import SearchBar from '../components/SearchBar';
 import RecipeList from '../components/RecipeList';
@@ -26,7 +26,7 @@ export default function Home() {
 
 
   return (
-    <div>
+    <div >
         <h1 className='mb-4'>Liste des recettes</h1>
         <SearchBar onSearch={handleSearch}/>
 

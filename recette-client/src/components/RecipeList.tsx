@@ -17,7 +17,7 @@ export default function RecipeList({recipes }: RecipeListProps) {
             {recipes.length === 0 ? (
                 <p>Aucune recette trouvée.</p>
             ) : (
-                <ul className='grid sm: grid-cols-2 md:grid-cols-4 lg:grid-cols-6 justify-center items-center'>
+                <ul className='grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 justify-center items-center'>
                     {recipes.map((recipe) => (
                         <li key={recipe._id} className="recipe-item">
                             <Link to={`/recipes/${recipe._id}`} className="recipe-link">
