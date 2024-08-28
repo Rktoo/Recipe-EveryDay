@@ -1,44 +1,30 @@
-import { useState } from 'react'
-import useFetchRecipes from '../utils/useFetchRecipes';
-import SearchBar from '../components/SearchBar';
-import RecipeList from '../components/RecipeList';
-
+import { Link } from "react-router-dom";
 
 export default function Home() {
-    const [query, setQuery] = useState<string>('');
-    const { recipes, loading, error,setRecipes } = useFetchRecipes(query);
 
-    const handleSearch = async (query:string)=> {
-        try {
-            const response = await fetch(`/api/recipes/search?q=${encodeURIComponent(query)}`)
-            setQuery(query);
-            // if(!response.ok){
-            //     throw new Error("Erreur lors de la recherche de recette");
-            // }
-
-            const data = await response.json();
-            console.log(data)
-            setRecipes(data);
-        }catch (err) {
-            console.error(err);
-        }
-    };
-
-
-  return (
-    <div >
-        <h1 className='mb-4'>Liste des recettes</h1>
-        <SearchBar onSearch={handleSearch}/>
-
-        {
-            loading && <p>Chargement...</p>
-        }
-
-        {
-            error && <p>Erreur : {error}</p>
-        }
-        
-        <RecipeList recipes={recipes}/>
-    </div>
-  )
+    const subCategories = [
+        { "titre": "Etes-vous prêt à démarrer cette aventure ?", "lien" : "/recipes"},
+        { "titre": "Les menus populaires du moment", "lien" : "/popular"},
+        { "titre": "Notre liste de favoris prête à vous surprendre", "lien" : "/favorites"},
+    ]
+    return (
+        <div >
+            <div className="flex flex-col gap-2 mb-10 px-4 py-2 backdrop-blur-md rounded-xl ">
+                <h1>Recipe Every Day</h1>
+                <p>Votre source quotidienne d'inspiration culinaire pour des repas savoureux et faciles à préparer.</p>
+                <p>Nous sommes votre guide quotidien pour cuisiner facilement</p>
+            </div>
+            <div className="flex flex-col md:flex-row md:justify-center gap-2 ">
+            {
+                subCategories && subCategories.map(sub => (
+            <div className="w-[300px] flex flex-col justify-end items-end px-4 py-2 backdrop-blur-md rounded-xl ">
+                <p className="bg-">{sub.titre}</p>
+                <Link to={sub.lien}><button className="text-[#29323C] hover:border-[#29323C]">Démarrer</button></Link>
+            </div>
+                ))
+            }
+            </div>
+            <div className="h-[10vh] md:h-[30vh]"></div>
+        </div>
+    )
 }
