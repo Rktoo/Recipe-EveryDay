@@ -1,0 +1,41 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+interface Recipe {
+    id :string;
+    title: string;
+    image : string;
+    ingredients : string[];
+    instructions : string;
+}
+
+const useFetchRecipes = (query : string) => {
+    const [recipes, setRecipes] = useState<Recipe[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchRecipes = async () => {
+            setLoading(true);
+            setError(null);
+
+            try {
+                const response = await axios.get(`http://localhost:6001/api/recipes`, {
+                    params: { query }
+                });
+                setRecipes(response.data);
+            } catch (err) {
+                setError('Erreur de chargement des recettes.' );
+                console.error(err)
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchRecipes();
+    }, [query]);
+
+    return { recipes, loading, error, setRecipes };
+};
+
+export default useFetchRecipes;
