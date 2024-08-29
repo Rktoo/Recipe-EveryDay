@@ -47,6 +47,7 @@ En cours de construction
     ```bash
     npm start
 3. **Démarrez le côté client** :
+Depuis le repertoire recette-client
     ```bash
     npm run dev
 
