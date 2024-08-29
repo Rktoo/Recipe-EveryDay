@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-interface Recipe {
-    id :string;
+export interface Recipe {
+    _id :string;
     title: string;
-    image : string;
     ingredients : string[];
     instructions : string;
+    image : string;
+    like: string;
 }
 
 const useFetchRecipes = (query : string) => {

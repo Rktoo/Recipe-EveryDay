@@ -42,9 +42,9 @@
 }
 
 body {
-position: relative;
-font-family: "Poppins", sans-serif;
-color: white;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  color: white;
 }
 
 body::before {
@@ -62,7 +62,9 @@ body::before {
   z-index: -1;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Playfair Display", serif;
 }
 
@@ -71,6 +73,7 @@ a {
   color: white;
   text-decoration: inherit;
 }
+
 a:hover {
   color: white;
 }
@@ -99,26 +102,31 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-input[type="text"], textarea {
-  border: 1px solid rgba(0,0,0,.2);
+input[type="text"],
+textarea {
+  border: 1px solid rgba(0, 0, 0, .2);
   padding: 10px 20px;
-  background-color: rgba(0, 152, 255, 0.1);
+  background-color: rgba(44,
+    57,
+    68, 0.9);
   color: white;
   transition: all .2s ease-in-out;
 }
 
 .container-recipe {
-    padding: 20px 20px;
-    background-color: rgba(0, 152, 255, 0.05);
-      color: white;
-      transition: all .2s ease-in-out;
+  padding: 20px 20px;
+  background-color: rgba(44, 57, 68, 0.7);
+  color: white;
+  transition: all .2s ease-in-out;
 }
+
 .title {
   display: flex;
   justify-content: center;
-  align-items: center;;
+  align-items: center;
+  ;
   margin-bottom: 1rem;
-  background-color: rgba(0, 152, 255, 0.05);
+  background-color: rgba(44, 57, 68, 0.5);
 }
 
 @media (prefers-color-scheme: light) {
@@ -126,9 +134,11 @@ input[type="text"], textarea {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: white;
   }
+
   button {
     background-color: #f9f9f9;
   }

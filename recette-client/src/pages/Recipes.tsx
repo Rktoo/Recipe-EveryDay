@@ -38,7 +38,7 @@ export default function Recipes() {
             }
 
             {
-                error && <p>Erreur : {error}</p>
+                error && <div className='h-screen'><p>Erreur : {error}</p></div>
             }
 
             <RecipeList recipes={recipes} />
