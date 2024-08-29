@@ -21,6 +21,23 @@ const getRecipeById = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
+
+const likeRecipe = async (req, res) => {
+    console.log("Tu es ici");
+    try {
+    const recipe = await Recipe.findById(req.params.id);
+        if (!recipe) {
+            return res.status(404).json({ message: "Recette non trouvée" });
+        }
+
+        recipe.like = Number(recipe.like) + 1;
+        recipe.save();
+        res.status(201).json(recipe);
+    } catch (error){
+        res.status(500).json({ message: error.message });
+    }
+}
+
 const addRecipe = async (req, res) => {
     const recipe = new Recipe(req.body);
 
@@ -47,4 +64,4 @@ const searchRecipes = async (req, res) => {
 }
 
 
-module.exports = { getAllRecipes, getRecipeById, addRecipe, searchRecipes }
+module.exports = { getAllRecipes, getRecipeById, likeRecipe, addRecipe, searchRecipes }
