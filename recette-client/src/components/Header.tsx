@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <header className='relative top-0 w-full z-50'>
       <nav className='max-w-6xl mx-auto pt-4 px-10  flex flex-col justify-between items-center gap-4'>
-        <div className='h-10 md:h-10'>
+        <div className='h-20 md:h-24'>
         </div>
         <ul className='fixed flex flex-row gap-1 border-2 rounded-full px-10 overflow-hidden backdrop-blur-md'>
           {

@@ -6,15 +6,31 @@ type Props = {
 
 export default function SearchBar({ onSearch }: Props) {
     const [query, setQuery] = useState<string>('');
+    const [debounceTimer, setDebounceTimer] = useState<number | null>(null);
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setQuery(event.target.value);
+        const newQuery = event.target.value;
+        setQuery(newQuery);
 
+        if (debounceTimer) {
+            clearTimeout(debounceTimer);
+        }
+
+        const t = setInterval(() => {
+            onSearch(newQuery);
+        }, 500);
+
+        setDebounceTimer(t);
     };
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        if(debounceTimer){
+            clearTimeout(debounceTimer);
+        }
         onSearch(query);
     };
+
+    
 
     return (
         <form onSubmit={handleSubmit} className="search-bar flex flex-row gap-2">

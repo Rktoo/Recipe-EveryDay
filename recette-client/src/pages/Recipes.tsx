@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import useFetchRecipes from '../utils/useFetchRecipes';
 import SearchBar from '../components/SearchBar';
 import RecipeList from '../components/RecipeList';
+import axios from 'axios';
 
 
 export default function Recipes() {
@@ -9,19 +10,29 @@ export default function Recipes() {
     const { recipes, loading, error, setRecipes } = useFetchRecipes(query);
 
     const handleSearch = async (query: string) => {
+        console.log(query)
         try {
-            const response = await fetch(`/api/recipes/search?q=${encodeURIComponent(query)}`)
+            if(query.trim() === ""){
+                const response = await axios.get(`http://localhost:6001/api/recipes`);
+                setRecipes(response.data);
+            } else {
             setQuery(query);
-            const data = await response.json();
-            setRecipes(data);
+            const response = await axios.get(`http://localhost:6001/api/recipes/search?q=${encodeURIComponent(query)}`);
+            
+            setRecipes(response.data);
+            }
         } catch (err) {
             console.error(err);
         }
     };
 
+    // useEffect(() => {
+
+    // }, [recipes])
+
 
     return (
-        <div className='-mt-[6.5rem] min-[550px]:-mt-[2rem] lg:-mt-[1.2rem]'>
+        <div >
             <div className='title border-[1px] border-white rounded-xl backdrop-blur-md'>
                 <h1 className='text-center my-4 mx-2'>Liste des recettes</h1>
             </div>
@@ -29,7 +40,7 @@ export default function Recipes() {
                 <SearchBar onSearch={handleSearch} />
             </div>
             {
-                loading && <p className='mt-4'>Chargement...</p>
+                (loading && recipes.length < 1) && <p className='mt-4'>Chargement...</p>
             }
 
             {

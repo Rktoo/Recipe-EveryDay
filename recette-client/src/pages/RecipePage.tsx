@@ -58,7 +58,7 @@ export default function RecipePage() {
                 <div className='container-recipe flex flex-col gap-2 p-4 rounded-xl border-[1px] backdrop-blur-[2px] ' >
                     <div className='flex flex-row justify-between items-center'>
                         <h1>{recipe.title}</h1>
-                        <div className='flex flex-row  items-center gap-2 mr-5'>
+                        <div className='flex flex-row  items-center gap-2 mr-8'>
                             <img src="/src/assets/svg/star.svg" alt="svg like" />
                             <p className='text-xl' ref={likeRef}>{Number(recipe.like)}</p>
                         </div>
@@ -70,7 +70,7 @@ export default function RecipePage() {
                             <ul className='font-thin'>
                                 {
                                     recipe.ingredients.map((ingredient, index) => (
-                                        <li key={index}>{ingredient}</li>
+                                        <li key={index}>- {ingredient}</li>
                                     ))
                                 }
                             </ul>

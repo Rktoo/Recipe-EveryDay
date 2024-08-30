@@ -5,7 +5,7 @@ export default function Home() {
     const subCategories = [
         { "titre": "Etes-vous prêt à démarrer cette aventure ?", "lien" : "/recipes"},
         { "titre": "Les menus populaires du moment", "lien" : "/popular"},
-        { "titre": "Notre liste de favoris prête à vous surprendre", "lien" : "/favorites"},
+        { "titre": "Notre liste de favoris prête à vous surprendre", "lien" : "/favorite"},
     ]
     return (
         <div >

@@ -50,13 +50,15 @@ const addRecipe = async (req, res) => {
 
 const searchRecipes = async (req, res) => {
     const query = req.query.q;
-    console.log("J'ai tenté de faire une recherche");
+    if(!query){
+        console.error("Aucune requete de recherche");
+        return res.status(400).json({message: "Aucune requête de recherche fournie."});
+    }
     try {
         const recipes = await Recipe.find({
             title : { $regex : query, $options : "i"}
         });
-
-        res.json(recipes);
+        res.status(201).json(recipes);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
