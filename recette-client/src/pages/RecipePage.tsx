@@ -11,7 +11,7 @@ export default function RecipePage() {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const { liked, checkItemLiked, saveItemLiked } = useLikeContext();
-    const likeRef = useRef();
+    const likeRef = useRef<HTMLSpanElement | null>(null);
 
     const likeRecipe = async (id: string) => {
         try {
@@ -46,7 +46,9 @@ export default function RecipePage() {
     }, [id]);
 
     useEffect(() => {
+        if(recipe){
         checkItemLiked(recipe?._id)
+        }
     }, [recipe]);
 
     if (loading) return <p>Chargement....</p>;
@@ -60,7 +62,7 @@ export default function RecipePage() {
                         <h1>{recipe.title}</h1>
                         <div className='flex flex-row  items-center gap-2 mr-8'>
                             <img src="/src/assets/svg/star.svg" alt="svg like" />
-                            <p className='text-xl' ref={likeRef}>{Number(recipe.like)}</p>
+                            <span className='text-xl' ref={likeRef}>{recipe.like}</span>
                         </div>
                     </div>
                     <img src="https://placehold.jp/3d4070/ffffff/150x150.png" alt={recipe.title} width={200} height={200} />

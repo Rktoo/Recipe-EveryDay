@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import useFetchRecipes from '../utils/useFetchRecipes';
 import SearchBar from '../components/SearchBar';
 import RecipeList from '../components/RecipeList';
@@ -25,10 +25,6 @@ export default function Recipes() {
             console.error(err);
         }
     };
-
-    // useEffect(() => {
-
-    // }, [recipes])
 
 
     return (

@@ -6,9 +6,9 @@ type FormDemande = {
     demande : string,
 }
 export default function Form() {
-    const [demande, setDemande] = useState<FormDemande>();
+    const [demande, setDemande] = useState<FormDemande>({nom: "", demande:""});
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value} = event.target;
         setDemande(prev => {
             return ({
@@ -23,8 +23,8 @@ export default function Form() {
     }
  
     return (
-        <div>
-            <form action="#" method="post" className="max-w-[350px] container-recipe border-[1px]"
+        <div className="w-full flex flex-col justify-center items-center md:items-start">
+            <form action="#" method="post" className="max-w-[350px] container-recipe border-[1px] rounded-lg"
             onSubmit={handleSubmit}
             >
                 <div>
@@ -40,7 +40,8 @@ export default function Form() {
                     <textarea name="demande" id="demande"
                         className="w-full min-h-[100px] max-h-[200px]"
                         onChange={handleChange}
-                    >{demande ? demande.demande : "" }</textarea>
+                        value={demande.demande}
+                    />
                 </div>
                 <button
                     className=" text-[#29323C] hover:border-[#29323C]"
