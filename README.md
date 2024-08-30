@@ -40,6 +40,7 @@ En cours de construction
     
 ## Configuration
 1. **Faites le seed de la base de donnée** :
+
     Depuis le repertoire recette-backend
     ```bash
     node .\scripts\insertRecipes.js

@@ -23,7 +23,6 @@ const getRecipeById = async (req, res) => {
 }
 
 const likeRecipe = async (req, res) => {
-    console.log("Tu es ici");
     try {
     const recipe = await Recipe.findById(req.params.id);
         if (!recipe) {

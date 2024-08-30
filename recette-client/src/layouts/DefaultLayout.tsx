@@ -10,7 +10,7 @@ export default function DefaultLayout() {
     <>
         <Header />
         <main 
-        className="max-w-6xl mx-auto my-4 px-10 flex flex-col justify-center"
+        className="max-w-6xl mx-auto my-4 px-10 flex flex-col justify-center scale-90 antialiased"
         >
             <Outlet/>
         </main>

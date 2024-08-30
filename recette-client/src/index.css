@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -31,13 +30,13 @@
 
 @font-face {
   font-family: "Playfair Display";
-  src: url("./assets/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf") format("truetype");
+  src: url("./assets/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Playfair Display";
-  src: url("./assets/fonts/Playfair_Display/static/PlayfairDisplay-Bold.ttf") format("truetype");
+  src: url("./assets/fonts/Playfair_Display/PlayfairDisplay-Bold.ttf") format("truetype");
   font-weight: 700;
 }
 

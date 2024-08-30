@@ -10,7 +10,6 @@ export default function Form() {
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value} = event.target;
-        console.log(value)
         setDemande(prev => {
             return ({
                 ...prev,

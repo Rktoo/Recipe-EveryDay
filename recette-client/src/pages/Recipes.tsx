@@ -12,12 +12,7 @@ export default function Recipes() {
         try {
             const response = await fetch(`/api/recipes/search?q=${encodeURIComponent(query)}`)
             setQuery(query);
-            // if(!response.ok){
-            //     throw new Error("Erreur lors de la recherche de recette");
-            // }
-
             const data = await response.json();
-            console.log(data)
             setRecipes(data);
         } catch (err) {
             console.error(err);
@@ -26,19 +21,19 @@ export default function Recipes() {
 
 
     return (
-        <div >
+        <div className='-mt-[6.5rem] min-[550px]:-mt-[2rem] lg:-mt-[1.2rem]'>
             <div className='title border-[1px] border-white rounded-xl backdrop-blur-md'>
-                <h1 className='my-4 text-center '>Liste des recettes</h1>
+                <h1 className='text-center my-4 mx-2'>Liste des recettes</h1>
             </div>
             <div className='w-full flex justify-center'>
                 <SearchBar onSearch={handleSearch} />
             </div>
             {
-                loading && <p>Chargement...</p>
+                loading && <p className='mt-4'>Chargement...</p>
             }
 
             {
-                error && <div className='h-screen'><p>Erreur : {error}</p></div>
+                error && <div className='container-recipe mt-4'><p>{error}</p></div>
             }
 
             <RecipeList recipes={recipes} />
