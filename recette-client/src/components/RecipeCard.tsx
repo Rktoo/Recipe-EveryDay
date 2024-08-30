@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+import { Recipe } from "../utils/useFetchRecipes";
 
+type RecipeListProps = {
+    recipe: Recipe
+}
 
-export default function RecipeCard({recipe}) {
+export default function RecipeCard({ recipe }: RecipeListProps) {
+
   return (
       <li key={recipe._id} className="recipe-item">
           <Link to={`/recipes/${recipe._id}`} className="recipe-link text-white hover:text-white">
