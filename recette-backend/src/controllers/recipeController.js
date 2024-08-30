@@ -65,4 +65,6 @@ const searchRecipes = async (req, res) => {
 }
 
 
+
+
 module.exports = { getAllRecipes, getRecipeById, likeRecipe, addRecipe, searchRecipes }
