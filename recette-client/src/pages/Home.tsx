@@ -50,7 +50,7 @@ export default function Home() {
                     subCategories && subCategories.map((sub, index) => (
                         <div 
                         ref={el => (subCategoriesRef.current[index] = el!)}
-                        className="container-recipe w-[300px] flex flex-col justify-end items-end px-4 py-2 border-[1px] border-white backdrop-blur-md rounded-xl " 
+                        className="container-recipe w-[300px] flex flex-col justify-end items-end px-4 py-2 border-[1px] border-white backdrop-blur-md rounded-xl opacity-0" 
                         key={sub.titre}>
                             <p className="bg-">{sub.titre}</p>
                             <Link to={sub.lien}><button className="text-[#29323C] hover:border-[#29323C]">Démarrer</button></Link>
