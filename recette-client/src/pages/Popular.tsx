@@ -19,13 +19,13 @@ export default function Popular() {
         }
         {
           recipes && recipes.map(recipe => {
-            if (Number(recipe.like) > 10) {
+            if (Number(recipe.like) >= 5) {
               const recipesPop = [];
               recipesPop.push(recipe)
               return (
-                <RecipeList recipes={recipesPop} />
+                <RecipeList recipes={recipesPop} key={recipe._id}/>
               )
-            }
+            } 
           })
         }
       </div>

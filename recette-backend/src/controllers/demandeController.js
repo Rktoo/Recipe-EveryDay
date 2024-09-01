@@ -23,11 +23,11 @@ const demandeRecipe = async (req, res) => {
 
 const getDemandeRecipe = async (req, res) => {
     try {
-        const getAllRecipes = await Demande.find().sort({createdAt : -1}).limit(5);
+        const getAlldemande = await Demande.find().sort({createdAt : -1}).limit(5);
         
-        console.log(getAllRecipes)
-        if(getAllRecipes){
-            res.status(201).json(getAllRecipes);
+        
+        if (getAlldemande){
+            res.status(201).json(getAlldemande);
         }
 
     } catch (error) {

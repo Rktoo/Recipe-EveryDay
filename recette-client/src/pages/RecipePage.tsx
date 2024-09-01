@@ -15,7 +15,7 @@ export default function RecipePage() {
 
     const likeRecipe = async (id: string) => {
         try {
-            const response = await axios.get(`http://localhost:6001/api/recipes/${id}/like`);
+            const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/${id}/like`);
             if (!response.data) return;
             if (likeRef.current) {
                 likeRef.current.textContent = String(Number(likeRef.current.textContent) + 1);
@@ -29,7 +29,7 @@ export default function RecipePage() {
 
     const fetchRecipe = useCallback( async () => {
         try {
-            const response = await axios.get(`http://localhost:6001/api/recipes/${id}`);
+            const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/${id}`);
             setRecipe(response.data);
             setLoading(false);
         } catch (err) {
@@ -65,7 +65,7 @@ export default function RecipePage() {
                             <span className='text-xl' ref={likeRef}>{recipe.like}</span>
                         </div>
                     </div>
-                    <img src={`http://localhost:6001${recipe.image}`} alt={recipe.title} className='rounded-lg shadow-lg' width={200} height={200} />
+                    <img src={`${import.meta.env.VITE_API_BASE_PUBLIC}${recipe.image}`} alt={recipe.title} className='rounded-lg shadow-lg' width={200} height={200} />
                     <div className='grid grid-cols-6 gap-10'>
                         <div className='col-span-2'>
                             <h2 className='text-lg font-semibold text-amber-400'>Ingrédients</h2>

@@ -33,12 +33,12 @@ export const useFetchDemandes = () => {
     const getAllDemande = useCallback(async () => {
         try {
             if (submit === true ) {
-                const result = await axios.get("http://localhost:6001/api/recipes/demande-recipe");
+                const result = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/demande-recipe`);
 
                 setError(false);
                 setDemandes(result.data);
             } else {
-                const result = await axios.get("http://localhost:6001/api/recipes/demande-recipe");
+                const result = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/demande-recipe`);
                 setDemandes(result.data);
                 setError(false);
 

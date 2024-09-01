@@ -35,7 +35,7 @@ export default function Form() {
         }
 
         try {
-            const response = await axios.post("http://localhost:6001/api/recipes/demande-recipe", payload);
+            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/demande-recipe`, payload);
 
             if (!response.data) return;
 

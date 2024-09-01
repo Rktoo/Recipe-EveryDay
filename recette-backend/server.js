@@ -1,7 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const PORT = process.env.PORT || 6001;
+const PORT = process.env.PORT || 6002;
 const recipeRoutes = require("./src/routes/recipes");
 const path = require("path");
 
@@ -9,7 +10,7 @@ const app = express();
 
 (async () => {
     try {
-        mongoose.connect("mongodb://localhost/recipes");
+        mongoose.connect(process.env.MONGODB_URI);
         console.log("MongoDb connected...");
         
     } catch (error) {
