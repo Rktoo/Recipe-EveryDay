@@ -17,21 +17,20 @@ export default function Home() {
         animateElement(containerRef);
 
         if (subCategoriesRef.current) {
-            subCategoriesRef.current.forEach((element) => {
-                gsap.from(element, {
-                    duration : 0.8,
-                    opacity : -0.5,
-                    y : 10,
-                    ease : "power3.out",
-                    delay : 0.2 ,
-                });
-                gsap.to(element, {
-                    duration : 1,
-                    opacity : 1,
-                    y : 0,
-                    ease : "power3.Out",
-                    delay : 0.1,
-                });
+            gsap.fromTo(subCategoriesRef.current, {
+                opacity : 0.95,
+                y: 10
+            },{
+                duration : 0.4,
+                opacity : 1,
+                y : -10,
+                ease : "elastic.out",
+                stagger : {
+                    yoyo : true,
+                    each : 0.05,
+                    repeat : 1,
+                    from : "edges",
+                }
             });
         }
     }, []);

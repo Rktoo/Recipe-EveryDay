@@ -8,12 +8,16 @@ export const animateElement = (element : RefObject<HTMLElement | null>) => {
             opacity: -1,
             y: -5,
             ease: "power3.Out",
+            
         });
         gsap.to(element.current, {
             duration: 1,
             opacity: 1,
             y: 0,
-            ease: "power4.Out",
+            ease: "power4.out",
+            stagger: {
+                yoyo: true,
+            }
         });
     }
 }
