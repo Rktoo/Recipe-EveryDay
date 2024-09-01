@@ -15,7 +15,6 @@ export default function DemandeList() {
                 }
                 {
                     demandes && demandes.map(demande => {
-                        console.log(demande.createdAt)
                         return <li className="min-w-64 flex flex-col justify-between gap-2" key={demande?._id}>
                             <div className="grid grid-cols-2 items-start">
                                 <div className="flex flex-col">

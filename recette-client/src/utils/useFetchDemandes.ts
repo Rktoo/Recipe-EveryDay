@@ -40,7 +40,6 @@ export const useFetchDemandes = () => {
             } else {
                 const result = await axios.get("http://localhost:6001/api/recipes/demande-recipe");
                 setDemandes(result.data);
-                console.log("Nouveau résultat sans submit:", result.data);
                 setError(false);
 
             }

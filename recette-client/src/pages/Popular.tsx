@@ -19,7 +19,6 @@ export default function Popular() {
         }
         {
           recipes && recipes.map(recipe => {
-
             if (Number(recipe.like) > 10) {
               const recipesPop = [];
               recipesPop.push(recipe)

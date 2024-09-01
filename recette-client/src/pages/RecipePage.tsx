@@ -91,7 +91,7 @@ export default function RecipePage() {
                             <span className='cursor-pointer hover:scale-110' onClick={() => likeRecipe(recipe._id)}>👍</span>
                         </div>
                             : <div className='flex flex-row justify-end items-center gap-2'>
-                            <p className='text-green-400'>Vous aimez</p>
+                            <p className='text-green-400'>Vous aimez 😊</p>
                         </div>
                     }
                 </div>

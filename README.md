@@ -55,7 +55,7 @@ Depuis le repertoire recette-client
 ## Utilisation
 1. **Vous aurez des recettes que vous pourrez essayer à la maison**
 2. **Les visiteurs peuvent demander des recettes sans s'inscrire. Il n'y a pas d'inscription. 😊**
-3. **Aimez les recettes. En cours de finalisation sur le front**
+3. **Aimez les recettes.**
 3. **Ajouter les demandes de recette sur le site depuis l'administrateur du backend. En cours de construction**
 
 ## LICENCE
