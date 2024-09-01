@@ -3,9 +3,9 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const PORT = process.env.PORT || 6001;
 const recipeRoutes = require("./src/routes/recipes");
+const path = require("path");
 
 const app = express();
-
 
 (async () => {
     try {
@@ -17,6 +17,7 @@ const app = express();
     }
 })();
 
+app.use("/public", express.static(path.join(__dirname, "public")));
 app.use(cors());
 app.use(express.urlencoded({extended:true}))
 app.use(express.json());
