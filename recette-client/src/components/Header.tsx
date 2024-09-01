@@ -14,7 +14,7 @@ export default function Header() {
       <nav className='pt-4 px-10  flex flex-col justify-between items-center gap-4'>
         <div className='h-20 md:h-24'>
         </div>
-        <ul className='fixed flex flex-row gap-1 px-6 border-2 rounded-full  overflow-hidden backdrop-blur-md'>
+        <ul className='fixed  flex flex-row gap-1 px-6 border-2 border-transparent animate-border-glow rounded-full overflow-hidden backdrop-blur-md transition-all duration-150 ease-in-out'>
           {
             menuNavbar && menuNavbar.map(menu => {
               return (
