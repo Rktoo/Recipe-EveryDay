@@ -47,27 +47,13 @@ body {
 }
 
 #root {
-  background-image: url('/public/images/logo.jpg');
+  background-image: url('/images/logo.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transition: all .5s ease-in-out;
 }
 
-/* body::before {
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-width: 100dvh;
-height: 100dvh;
-background-image: url("/images/logo.jpg");
-background-size: auto;
-background-repeat: repeat;
-background-position: center;
-opacity: 0.9;
-z-index: -1;
-} */
 
 h1,
 h2,
@@ -103,11 +89,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-
+/* 
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 input[type="text"],
 textarea {

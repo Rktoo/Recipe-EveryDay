@@ -66,8 +66,11 @@ export default function SearchBar({ onSearch }: Props) {
                 onFocus={handleFocus}
                 onBlur={handleBlur}
                 placeholder="Rechercher des recettes..."
-                className="search-input rounded-full w-[300px] 
-                backdrop-blur-[2px] focus:outline-[1px] focus:outline-white"
+                className="
+                search-input 
+                rounded-full w-[300px] 
+                backdrop-blur-[2px]
+                 "
             />
             <button type="submit" className="rounded-full bg-green-500 hover:bg-green-600 text-white focus:bg-green-600 focus:outline-green-800">
                 Rechercher
