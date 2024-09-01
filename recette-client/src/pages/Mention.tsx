@@ -5,7 +5,7 @@ export default function Mention() {
           <h1>Mention Légale</h1>
           <div>
         <section>
-          <h2 className="underline underline-offset-2">1. Éditeur du site</h2>
+          <h2 className="underline underline-offset-2">Éditeur du site</h2>
           <p>
             Le site Recipe Every Day est édité par :
             <br />
@@ -24,18 +24,16 @@ export default function Mention() {
         </section>
 
         <section>
-          <h2 className="underline underline-offset-2">2. Directeur de la publication</h2>
+          <h2 className="underline underline-offset-2">Directeur de la publication</h2>
           <p>
             Nom du directeur de la publication : Rktoo
             <br />
             Contact : https://github.com/Rktoo
           </p>
         </section>
-
-
         
         <section>
-          <h2 className="underline underline-offset-2">5. Données personnelles</h2>
+          <h2 className="underline underline-offset-2">Données personnelles</h2>
           <p>
             Rktoo s'engage à ce que la collecte et le traitement de vos données, effectués à partir du site Recipe Every Day, soient conformes au règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés.
           </p>
