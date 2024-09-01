@@ -10,7 +10,7 @@ export default function Footer() {
         className="max-w-6xl mx-auto px-10 min-h-14 flex justify-start items-center text-start "
       >
         <div className="w-full flex flex-row justify-between">
-          <span>&copy; {date.getFullYear()}</span>
+          <span>&copy; {date.getFullYear()} - Rktoo</span>
           <div className="flex flex-row gap-2">
             <Link to={"/demande"} className="hover:underline underline-offset-4"><p>Demander une recette</p></Link>
             <Link to={"/mention-legale"} className="hover:underline underline-offset-4"><p>Mention légale</p></Link>
