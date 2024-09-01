@@ -10,7 +10,7 @@ export default function RecipeCard({ recipe }: RecipeListProps) {
   return (
       <li key={recipe._id} className="recipe-item">
           <Link to={`/recipes/${recipe._id}`} className="recipe-link text-white hover:text-white">
-              <img src="https://placehold.jp/3d4070/ffffff/150x150.png" alt={recipe.title} className="recipe-image w-52 hover:animate-pulse hover:scale-110 transition-all duration-200 ease-in-out rounded-lg" />
+              <img src={`http://localhost:6001${recipe.image}`} alt={recipe.title} className="recipe-image w-52 h-40 hover:animate-pulse hover:scale-110 transition-all duration-200 ease-in-out rounded-lg shadow-lg" />
               <div className='flex flex-row justify-between'>
                   <h2 className="recipe-title">{recipe.title}</h2>
                   <div className='flex flex-row items-center gap-2'>

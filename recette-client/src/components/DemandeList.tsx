@@ -14,6 +14,11 @@ export default function DemandeList() {
                     </li>
                 }
                 {
+                    demandes.length < 1 && <div>
+                        <p className="text-xs">Aucune demande</p>
+                    </div>   
+                }
+                {
                     demandes && demandes.map(demande => {
                         return <li className="min-w-64 flex flex-col justify-between gap-2" key={demande?._id}>
                             <div className="grid grid-cols-2 items-start">

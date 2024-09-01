@@ -9,7 +9,7 @@
             "Sauce César"
         ],
         "instructions": "Mélanger la laitue romaine avec la sauce César. Ajouter les croutons et le poulet grillé. Saupoudrer de parmesan et servir frais.",
-        "image" : "",
+        "image" : "/public/images/recipes/salade_cesar.jpg",
         "like" : 5
     },
     {
@@ -24,7 +24,7 @@
             "Poivre"
         ],
         "instructions": "Préchauffer le four à 180°C. Étaler la pâte brisée dans un moule à tarte. Répartir les lardons sur la pâte. Battre les œufs avec la crème fraîche, ajouter le gruyère râpé, saler et poivrer. Verser le mélange sur les lardons et cuire au four pendant 30 minutes.",
-        "image" : "",
+        "image" : "/public/images/recipes/quiche_lorraine.jpg",
         "like" : 2
     },
     {
@@ -41,7 +41,7 @@
             "Poivre"
         ],
         "instructions": "Faire revenir les oignons et l'ail dans l'huile d'olive. Ajouter les poivrons coupés en lamelles, les tomates pelées et épépinées. Assaisonner avec du sel, du poivre et du piment d'Espelette. Ajouter les morceaux de poulet et cuire à feu doux pendant 45 minutes.",
-        "image" : "",
+        "image" : "/public/images/recipes/poulet_basquaise.jpg",
         "like" : 4
     },
     {
@@ -61,7 +61,7 @@
             "Poivre"
         ],
         "instructions": "Faire revenir les morceaux de boeuf dans un mélange de beurre et d'huile. Ajouter les lardons, les oignons émincés, les carottes en rondelles, et saupoudrer de farine. Mouiller avec le vin rouge et compléter avec un peu d'eau. Ajouter le bouquet garni, assaisonner, et cuire à feu doux pendant 3 heures. Ajouter les champignons émincés 30 minutes avant la fin de la cuisson.",
-        "image" : "",
+        "image" : "/public/images/recipes/boeuf_bourgignon.jpg",
         "like" : 1
     },
     {
@@ -77,7 +77,7 @@
             "Poivre"
         ],
         "instructions": "Faire fondre le beurre dans une casserole, ajouter les oignons émincés et les faire dorer. Saupoudrer de farine et mélanger. Ajouter le bouillon de boeuf, saler, poivrer et laisser mijoter 20 minutes. Verser la soupe dans des bols, ajouter des tranches de pain grillé et saupoudrer de gruyère râpé. Passer sous le grill du four pour gratiner.",
-        "image" : "",
+        "image" : "/public/images/recipes/soupe_a_oignon.jpg",
         "like" : 6
     },
     {
@@ -95,7 +95,7 @@
             "Poivre"
         ],
         "instructions": "Couper les légumes en dés. Faire revenir les oignons et l'ail dans l'huile d'olive. Ajouter les aubergines, les courgettes, les poivrons et les tomates. Assaisonner avec des herbes de Provence, du sel et du poivre. Cuire à feu doux pendant 30 minutes en remuant régulièrement.",
-        "image" : "",
+        "image" : "/public/images/recipes/ratatouille.jpg",
         "like" : 8
     },
     {
@@ -107,7 +107,7 @@
             "Sucre"
         ],
         "instructions": "Préchauffer le four à 180°C. Faire fondre le beurre dans une poêle, ajouter le sucre et laisser caraméliser. Ajouter les pommes coupées en quartiers et les faire revenir quelques minutes. Disposer les pommes dans un moule, couvrir avec la pâte brisée et enfourner pendant 30 minutes. Retourner la tarte sur un plat avant de servir.",
-        "image" : "",
+        "image" : "/public/images/recipes/tarte-tartin.jpg",
         "like" : 3
     },
     {
@@ -120,7 +120,7 @@
             "Crème fraîche"
         ],
         "instructions": "Faire fondre le chocolat avec le beurre au bain-marie. Séparer les blancs des jaunes d'œufs. Ajouter les jaunes et le sucre au chocolat fondu, mélanger. Monter les blancs en neige ferme et les incorporer délicatement au mélange chocolaté. Ajouter la crème fraîche et mélanger doucement. Réfrigérer pendant au moins 2 heures avant de servir.",
-        "image" : "",
+        "image" : "/public/images/recipes/mouse-au-chocolat.jpg",
         "like" : 2
     },
     {
@@ -136,7 +136,7 @@
             "Sucre glace"
         ],
         "instructions": "Préparer la pâte à crêpes avec la farine, les œufs, le lait, le beurre fondu et une pincée de sucre. Cuire les crêpes dans une poêle chaude. Dans une poêle, faire fondre du beurre, ajouter le sucre, le zeste et le jus d'orange, et le Grand Marnier. Tremper les crêpes dans cette sauce et plier en quatre. Servir chaud, saupoudré de sucre glace.",
-        "image" : "",
+        "image" : "/public/images/recipes/crepe_suzette.jpg",
         "like" : 1
     },
     {
@@ -150,7 +150,7 @@
             "Cacao en poudre"
         ],
         "instructions": "Séparer les blancs des jaunes d'œufs. Battre les jaunes avec le sucre jusqu'à ce que le mélange blanchisse. Ajouter le mascarpone et mélanger. Monter les blancs en neige ferme et les incorporer délicatement au mélange. Tremper les biscuits dans le café et les disposer dans un plat. Couvrir avec la crème au mascarpone et répéter les couches. Saupoudrer de cacao en poudre et réfrigérer pendant au moins 4 heures.",
-        "image": "",
+        "image": "/public/images/recipes/tiramisu.jpg",
         "like": 4
     }
 ]
