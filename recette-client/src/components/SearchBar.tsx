@@ -49,13 +49,13 @@ export default function SearchBar({ onSearch }: Props) {
                 setLastQuery(query);
             }, 500);
 
-            setDebounceTimer(t);
+            setDebounceTimer(Number(t));
 
             return () => {
-                clearTimeout(t)
+                clearInterval(t)
             };
         }
-    }, [query,isFocused, lastQuery, debounceTimer, onSearch])
+    }, [query,isFocused])
 
     return (
         <form onSubmit={handleSubmit} className="search-bar flex flex-row gap-2">

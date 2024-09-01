@@ -15,7 +15,6 @@ const useFetchRecipes = (query : string) => {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
-    console.log(import.meta.env.VITE_API_BASE_URL)
     useEffect(() => {
         const fetchRecipes = async () => {
             setLoading(true);

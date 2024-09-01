@@ -12,7 +12,7 @@ export default function Recipes() {
     const handleSearch = async (query: string) => {
         try {
             if(query.trim() === ""){
-                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/demande-recipe`);
+                const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}`);
                 setRecipes(response.data);
             } else {
             setQuery(query);
