@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Recipe } from '../utils/useFetchRecipes';
 import { useLikeContext } from '../utils/useLikeContext';
@@ -27,7 +27,7 @@ export default function RecipePage() {
         }
     }
 
-    const fetchRecipe = async () => {
+    const fetchRecipe = useCallback( async () => {
         try {
             const response = await axios.get(`http://localhost:6001/api/recipes/${id}`);
             setRecipe(response.data);
@@ -39,17 +39,17 @@ export default function RecipePage() {
             setLoading(false);
 
         }
-    };
+    }, [id]);
 
     useEffect(() => {
         fetchRecipe();
-    }, [id]);
+    }, [id, fetchRecipe]);
 
     useEffect(() => {
         if(recipe){
         checkItemLiked(recipe?._id)
         }
-    }, [recipe]);
+    }, [recipe, checkItemLiked]);
 
     if (loading) return <p>Chargement....</p>;
     if (error) return <p>Erreur : {error}</p>;
@@ -88,7 +88,7 @@ export default function RecipePage() {
                         liked === false ?
                         <div className='flex flex-row justify-end items-center gap-2'>
                             <p>Avez-vous aimé ?</p>
-                            <span className='cursor-pointer' onClick={() => likeRecipe(recipe._id)}>👍</span>
+                            <span className='cursor-pointer hover:scale-110' onClick={() => likeRecipe(recipe._id)}>👍</span>
                         </div>
                             : <div className='flex flex-row justify-end items-center gap-2'>
                             <p className='text-green-400'>Vous aimez</p>

@@ -14,7 +14,7 @@ export default function RecipeList({recipes }: RecipeListProps) {
             ) : (
                     <ul className='container-recipe flex flex-row flex-wrap gap-4 justify-center border p-2 rounded-xl backdrop-blur-[2px] '>
                     {recipes.map((recipe) => (
-                       <RecipeCard recipe={recipe}/>
+                       <RecipeCard recipe={recipe} key={recipe._id}/>
                     ))}
                 </ul>
             )}

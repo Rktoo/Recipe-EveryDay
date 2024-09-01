@@ -10,7 +10,6 @@ export default function Recipes() {
     const { recipes, loading, error, setRecipes } = useFetchRecipes(query);
 
     const handleSearch = async (query: string) => {
-        console.log(query)
         try {
             if(query.trim() === ""){
                 const response = await axios.get(`http://localhost:6001/api/recipes`);
@@ -36,7 +35,7 @@ export default function Recipes() {
                 <SearchBar onSearch={handleSearch} />
             </div>
             {
-                (loading && recipes.length < 1) && <p className='mt-4'>Chargement...</p>
+                (loading && recipes.length < 1) && <p className='container-recipe mt-4'>Chargement...</p>
             }
 
             {

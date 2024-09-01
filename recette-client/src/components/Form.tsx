@@ -9,6 +9,7 @@ type FormDemande = {
 }
 export default function Form() {
     const [demande, setDemande] = useState<FormDemande>({ nom: "", demande: "" });
+    const [sending, setSending] = useState<boolean>(false);
     const resultRef = useRef<HTMLDivElement | null>(null);
     const { setSubmit } = useFetchDemandes();
 
@@ -24,8 +25,9 @@ export default function Form() {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
         if (demande.nom.trim() === "" || demande.demande.trim() === "") return;
+
+        if (sending) return;
 
         const payload = {
             nom: demande.nom,
@@ -38,20 +40,34 @@ export default function Form() {
             if (!response.data) return;
 
             if (response.data) {
-                if (resultRef.current) {
-                    resultRef.current.textContent = response.data.message;
-                    setDemande({
-                        nom: "",
-                        demande: ""
-                    });
-                    setSubmit(true)
-                    resetResultRefContent();
+                
+                setSubmit(true);
+                animateBtn(response.data.message);
                 }
-            }
 
         } catch (error) {
             console.error("Erreur sur la soumission : ", error);
         }
+    }
+
+    const animateBtn = (response : string) => {
+        setSending(true);
+
+        const t = setTimeout(() => {
+            setSending(false);
+            
+            if (resultRef.current) {
+                resultRef.current.textContent = response;
+                setDemande({
+                    nom: "",
+                    demande: ""
+                });
+                
+            }
+            
+            resetResultRefContent();
+        }, 3000) 
+        return () => clearTimeout(t);
     }
 
     const resetResultRefContent = useCallback(() => {
@@ -60,7 +76,8 @@ export default function Form() {
                 if (resultRef.current) {
                     resultRef.current.textContent = "";
                 }
-            }, 5000);
+                window.location.reload();
+            }, 2000);
 
             return () => clearTimeout(t);
         }
@@ -92,10 +109,13 @@ export default function Form() {
                         value={demande.demande}
                     />
                 </div>
+                <div className="flex flex-col w-full">
                 <button
-                    className=" text-[#29323C] hover:border-[#29323C]"
-
-                    type="submit">Soumettre votre demande</button>
+                    className="flex justify-center items-center text-[#29323C] hover:border-[#29323C]"
+                    type="submit">{!sending ? "Soumettre votre demande" : <img src="/src/assets/images/spinner_medium.png" alt="spinner"
+                    className="w-6 h-6 animate-spin"
+                    /> } </button>
+                </div>
             </form>
         </div>
     )

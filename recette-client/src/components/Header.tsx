@@ -10,11 +10,11 @@ export default function Header() {
   ];
 
   return (
-    <header className='relative top-0 w-full z-50'>
-      <nav className='max-w-6xl mx-auto pt-4 px-10  flex flex-col justify-between items-center gap-4'>
+    <header className='relative top-0 z-50'>
+      <nav className='pt-4 px-10  flex flex-col justify-between items-center gap-4'>
         <div className='h-20 md:h-24'>
         </div>
-        <ul className='fixed flex flex-row gap-1 border-2 rounded-full px-10 overflow-hidden backdrop-blur-md'>
+        <ul className='fixed flex flex-row gap-1 px-6 border-2 rounded-full  overflow-hidden backdrop-blur-md'>
           {
             menuNavbar && menuNavbar.map(menu => {
               return (

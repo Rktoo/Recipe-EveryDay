@@ -43,6 +43,7 @@ export default function SearchBar({ onSearch }: Props) {
         }
 
         if (isFocused && query !== lastQuery) {
+            if(query.trim() === "")return;
             const t = setInterval(() => {
                 onSearch(query);
                 setLastQuery(query);
@@ -54,7 +55,7 @@ export default function SearchBar({ onSearch }: Props) {
                 clearTimeout(t)
             };
         }
-    }, [query,isFocused])
+    }, [query,isFocused, lastQuery, debounceTimer, onSearch])
 
     return (
         <form onSubmit={handleSubmit} className="search-bar flex flex-row gap-2">
