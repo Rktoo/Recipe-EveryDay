@@ -39,6 +39,7 @@ En cours de construction
     
 ## Configuration
 1. **Créer les fichiers d'environnement** :
+
     a. **Pour le backend** :
     Créer le fichier .env à la racine du backend et ajouter vos variables :
     PORT = 6001
