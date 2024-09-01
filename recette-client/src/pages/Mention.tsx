@@ -1,7 +1,15 @@
+import { useEffect, useRef } from "react"
+import { animateElement } from "../utils/animateElement"
 
 export default function Mention() {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    animateElement(containerRef)
+  }, [])
   return (
-    <div className="h-screen px-4 py-2 container-recipe rounded-xl border-[0.5px]">
+    <div 
+      ref={containerRef}
+    className="h-screen px-4 py-2 container-recipe rounded-xl border-[0.5px] opacity-0">
       <h1>Mention Légale</h1>
       <div>
         <section>

@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import useFetchRecipes from '../utils/useFetchRecipes';
 import SearchBar from '../components/SearchBar';
 import RecipeList from '../components/RecipeList';
 import axios from 'axios';
+import { animateElement } from '../utils/animateElement';
 
 
 export default function Recipes() {
     const [query, setQuery] = useState<string>('');
     const { recipes, loading, error, setRecipes } = useFetchRecipes(query);
+    const titleRef = useRef<HTMLDivElement | null>(null);
 
     const handleSearch = async (query: string) => {
         try {
@@ -25,10 +27,15 @@ export default function Recipes() {
         }
     };
 
+    useEffect(() => {
+        animateElement(titleRef)
+    }, [])
 
     return (
         <div >
-            <div className='title border-[1px] border-white rounded-xl backdrop-blur-md'>
+            <div 
+                ref={titleRef}
+            className='title border-[1px] border-white rounded-xl backdrop-blur-md opacity-0'>
                 <h1 className='text-center my-4 mx-2'>Liste des recettes</h1>
             </div>
             <div className='w-full flex justify-center'>

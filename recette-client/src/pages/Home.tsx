@@ -1,9 +1,9 @@
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { animateElement } from "../utils/animateElement";
 
 export default function Home() {
-
     const containerRef = useRef<HTMLDivElement | null>(null);
     const subCategoriesRef = useRef<HTMLDivElement[]>([]);
 
@@ -14,20 +14,7 @@ export default function Home() {
     ];
 
     useEffect(() => {
-        if (containerRef.current) {
-            gsap.from(containerRef.current, {
-                duration : 0.8,
-                opacity : -0.5,
-                y : -5,
-                ease : "power3.inOut",
-            });
-            gsap.to(containerRef.current, {
-                duration : 1,
-                opacity : 1,
-                y : 0,
-                ease : "power4.in",
-            });
-        }
+        animateElement(containerRef);
 
         if (subCategoriesRef.current) {
             subCategoriesRef.current.forEach((element) => {
@@ -53,7 +40,7 @@ export default function Home() {
         <div >
             <div 
             ref={containerRef}
-            className="container-recipe flex flex-col gap-2 mb-10 px-4 py-2 border-[1px] border-white backdrop-blur-md rounded-xl ">
+            className="container-recipe flex flex-col gap-2 mb-10 px-4 py-2 border-[1px] border-white backdrop-blur-md rounded-xl opacity-0">
                 <h1>Recipe Every Day</h1>
                 <p>Votre source quotidienne d'inspiration culinaire pour des repas savoureux et faciles à préparer.</p>
                 <p>Nous sommes votre guide quotidien pour cuisiner facilement.</p>

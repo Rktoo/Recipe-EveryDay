@@ -1,10 +1,19 @@
+import { useEffect, useRef } from "react";
 import DemandeList from "../components/DemandeList";
 import Form from "../components/Form";
+import { animateElement } from "../utils/animateElement";
 
 export default function Demande() {
+    const containerRef = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        animateElement(containerRef)
+    }, [])
     return (
         <div className="">
-            <div className='title px-8 border-[1px] border-white rounded-xl backdrop-blur-md'>
+            <div 
+                ref={containerRef}
+            className='title px-8 border-[1px] border-white rounded-xl backdrop-blur-md opacity-0'>
                 <h1 className="my-4">Demander une recette</h1>
             </div>
             <div className='title flex flex-col sm:flex-row md:gap-2 !justify-start !items-start px-4 py-2 border-[1px] border-white rounded-xl backdrop-blur-md'>
