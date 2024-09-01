@@ -2,15 +2,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export interface Recipe {
-    _id :string;
+    _id: string;
     title: string;
-    ingredients : string[];
-    instructions : string;
-    image : string;
+    ingredients: string[];
+    instructions: string;
+    image: string;
     like: string;
 }
 
-const useFetchRecipes = (query : string) => {
+const useFetchRecipes = (query: string) => {
     const [recipes, setRecipes] = useState<Recipe[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
@@ -26,7 +26,7 @@ const useFetchRecipes = (query : string) => {
                 });
                 setRecipes(response.data);
             } catch (err) {
-                setError('Erreur de chargement des recettes.' );
+                setError('Erreur de chargement des recettes.');
                 console.error(err)
             } finally {
                 setLoading(false);

@@ -1,9 +1,9 @@
 
 export default function Mention() {
   return (
-      <div className="h-screen px-4 py-2 container-recipe rounded-xl border-[0.5px]">
-          <h1>Mention Légale</h1>
-          <div>
+    <div className="h-screen px-4 py-2 container-recipe rounded-xl border-[0.5px]">
+      <h1>Mention Légale</h1>
+      <div>
         <section>
           <h2 className="underline underline-offset-2">Éditeur du site</h2>
           <p>
@@ -31,7 +31,7 @@ export default function Mention() {
             Contact : https://github.com/Rktoo
           </p>
         </section>
-        
+
         <section>
           <h2 className="underline underline-offset-2">Données personnelles</h2>
           <p>
@@ -45,7 +45,7 @@ export default function Mention() {
             Par email : email exemple
           </p>
         </section>
-          </div>
+      </div>
     </div>
   )
 }

@@ -1,11 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 interface StateContextProps {
-    liked : boolean;
-    itemLiked : string[];
-    _setLiked : (value:boolean) => void;
-    saveItemLiked : (item:string) => void;
-    checkItemLiked : (id:string) => void;
+    liked: boolean;
+    itemLiked: string[];
+    _setLiked: (value: boolean) => void;
+    saveItemLiked: (item: string) => void;
+    checkItemLiked: (id: string) => void;
 }
 
 const StateContext = createContext<StateContextProps>({
@@ -16,7 +16,7 @@ const StateContext = createContext<StateContextProps>({
     checkItemLiked: () => { }
 });
 
-export const ContextProvider = ({ children }: {children:React.ReactNode}) => {
+export const ContextProvider = ({ children }: { children: React.ReactNode }) => {
     const [liked, setLiked] = useState<boolean>(false);
     const [itemLiked, setItemLiked] = useState<string[]>([]);
 
@@ -36,7 +36,7 @@ export const ContextProvider = ({ children }: {children:React.ReactNode}) => {
     }
 
     const checkItemLiked = (id: string) => {
-        if (itemLiked.includes(id)){
+        if (itemLiked.includes(id)) {
             setLiked(true);
         } else {
             setLiked(false);
@@ -46,7 +46,7 @@ export const ContextProvider = ({ children }: {children:React.ReactNode}) => {
         setLiked(value)
     }
     return (
-        <StateContext.Provider value={{ liked, itemLiked, _setLiked,  checkItemLiked, saveItemLiked }}>
+        <StateContext.Provider value={{ liked, itemLiked, _setLiked, checkItemLiked, saveItemLiked }}>
             {children}
         </StateContext.Provider>
     )

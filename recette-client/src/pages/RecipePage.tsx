@@ -27,7 +27,7 @@ export default function RecipePage() {
         }
     }
 
-    const fetchRecipe = useCallback( async () => {
+    const fetchRecipe = useCallback(async () => {
         try {
             const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/${id}`);
             setRecipe(response.data);
@@ -46,8 +46,8 @@ export default function RecipePage() {
     }, [id, fetchRecipe]);
 
     useEffect(() => {
-        if(recipe){
-        checkItemLiked(recipe?._id)
+        if (recipe) {
+            checkItemLiked(recipe?._id)
         }
     }, [recipe, checkItemLiked]);
 
@@ -78,21 +78,21 @@ export default function RecipePage() {
                             </ul>
                         </div>
                         <div className='col-span-4'>
-                        <h2 className='text-lg font-semibold text-amber-400'>Instructions</h2>
-                        <p>{recipe.instructions}</p>
-                 
+                            <h2 className='text-lg font-semibold text-amber-400'>Instructions</h2>
+                            <p>{recipe.instructions}</p>
+
                         </div>
-                        
+
                     </div>
                     {
                         liked === false ?
-                        <div className='flex flex-row justify-end items-center gap-2'>
-                            <p>Avez-vous aimé ?</p>
-                            <span className='cursor-pointer hover:scale-110' onClick={() => likeRecipe(recipe._id)}>👍</span>
-                        </div>
+                            <div className='flex flex-row justify-end items-center gap-2'>
+                                <p>Avez-vous aimé ?</p>
+                                <span className='cursor-pointer hover:scale-110' onClick={() => likeRecipe(recipe._id)}>👍</span>
+                            </div>
                             : <div className='flex flex-row justify-end items-center gap-2'>
-                            <p className='text-green-400'>Vous aimez 😊</p>
-                        </div>
+                                <p className='text-green-400'>Vous aimez 😊</p>
+                            </div>
                     }
                 </div>
             ) : (

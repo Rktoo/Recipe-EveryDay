@@ -3,8 +3,8 @@ import useFetchRecipes from "../utils/useFetchRecipes"
 
 
 export default function Favorite() {
-  const {recipes} = useFetchRecipes("");
-  
+  const { recipes } = useFetchRecipes("");
+
   const recipe = recipes[0]
 
   return (
@@ -19,7 +19,7 @@ export default function Favorite() {
       <div className="flex justify-center ">
         <ul className="flex container-recipe border-[0.5px] rounded-lg w-[250px]">
           {
-          recipe !== undefined ? <RecipeCard recipe={recipe}/> : <div></div>
+            recipe !== undefined ? <RecipeCard recipe={recipe} /> : <div></div>
           }
         </ul>
       </div>

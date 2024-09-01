@@ -13,8 +13,8 @@ const getAllRecipes = async (req, res) => {
 const getRecipeById = async (req, res) => {
     try {
         const recipe = await Recipe.findById(req.params.id);
-        if(!recipe){
-            return res.status(404).json({message : "Recette non trouvée"});
+        if (!recipe) {
+            return res.status(404).json({ message: "Recette non trouvée" });
         }
         res.status(201).json(recipe);
     } catch (error) {
@@ -24,7 +24,7 @@ const getRecipeById = async (req, res) => {
 
 const likeRecipe = async (req, res) => {
     try {
-    const recipe = await Recipe.findById(req.params.id);
+        const recipe = await Recipe.findById(req.params.id);
         if (!recipe) {
             return res.status(404).json({ message: "Recette non trouvée" });
         }
@@ -32,7 +32,7 @@ const likeRecipe = async (req, res) => {
         recipe.like = Number(recipe.like) + 1;
         recipe.save();
         res.status(201).json(recipe);
-    } catch (error){
+    } catch (error) {
         res.status(500).json({ message: error.message });
     }
 }
@@ -50,13 +50,13 @@ const addRecipe = async (req, res) => {
 
 const searchRecipes = async (req, res) => {
     const query = req.query.q;
-    if(!query){
+    if (!query) {
         console.error("Aucune requete de recherche");
-        return res.status(400).json({message: "Aucune requête de recherche fournie."});
+        return res.status(400).json({ message: "Aucune requête de recherche fournie." });
     }
     try {
         const recipes = await Recipe.find({
-            title : { $regex : query, $options : "i"}
+            title: { $regex: query, $options: "i" }
         });
         res.status(201).json(recipes);
     } catch (error) {

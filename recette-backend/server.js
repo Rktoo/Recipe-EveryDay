@@ -12,7 +12,7 @@ const app = express();
     try {
         mongoose.connect(process.env.MONGODB_URI);
         console.log("MongoDb connected...");
-        
+
     } catch (error) {
         console.log(error.message);
     }
@@ -20,7 +20,7 @@ const app = express();
 
 app.use("/public", express.static(path.join(__dirname, "public")));
 app.use(cors());
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
 app.use("/api/recipes", recipeRoutes);
 

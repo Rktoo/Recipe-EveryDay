@@ -19,13 +19,13 @@ export default function Header() {
             menuNavbar && menuNavbar.map(menu => {
               return (
                 <Link to={menu.lien} className='text-white hover:text-white ' key={menu.nom} >
-                <li className={`my-1 px-4 py-4 ${menu.icon} bg-cover opacity-75 hover:scale-x-110 hover:z-[60] hover:opacity-100 transition-all duration-100 ease-in-out text-white rounded-full`} title={menu.nom} >
-               {menu.nom}
-              </li>
+                  <li className={`my-1 px-4 py-4 ${menu.icon} bg-cover opacity-75 hover:scale-x-110 hover:z-[60] hover:opacity-100 transition-all duration-100 ease-in-out text-white rounded-full`} title={menu.nom} >
+                    {menu.nom}
+                  </li>
                 </Link>
+              )
+            }
             )
-          }
-          )
           }
         </ul>
 

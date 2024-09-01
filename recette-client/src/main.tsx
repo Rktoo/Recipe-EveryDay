@@ -7,7 +7,7 @@ import { ContextProvider } from './utils/useLikeContext.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ContextProvider>
-    <AppRouter />
+      <AppRouter />
     </ContextProvider>
   </StrictMode>,
 )

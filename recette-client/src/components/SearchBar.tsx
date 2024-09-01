@@ -18,11 +18,11 @@ export default function SearchBar({ onSearch }: Props) {
     // Soumission de la requete
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        if(debounceTimer){
+        if (debounceTimer) {
             clearTimeout(debounceTimer);
         }
 
-        if(query !== lastQuery) {
+        if (query !== lastQuery) {
             onSearch(query);
         }
     };
@@ -43,7 +43,7 @@ export default function SearchBar({ onSearch }: Props) {
         }
 
         if (isFocused && query !== lastQuery) {
-            if(query.trim() === "")return;
+            if (query.trim() === "") return;
             const t = setInterval(() => {
                 onSearch(query);
                 setLastQuery(query);
@@ -55,7 +55,7 @@ export default function SearchBar({ onSearch }: Props) {
                 clearInterval(t)
             };
         }
-    }, [query,isFocused])
+    }, [query, isFocused])
 
     return (
         <form onSubmit={handleSubmit} className="search-bar flex flex-row gap-2">

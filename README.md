@@ -38,14 +38,14 @@ En cours de construction
     NET START mongoDB Server
     
 ## Configuration
-1. **Créez les fichiers d'environnement** :
-    1.a. Pour le backend :
-    Créez le fichier .env à la racine du backend et ajouter vos variables :
+1. **Créer les fichiers d'environnement** :
+    a. **Pour le backend** :
+    Créer le fichier .env à la racine du backend et ajouter vos variables :
     PORT = 6001
     MONGODB_URI = "mongodb://localhost/recipes"
 
-    1.b. Pour le front :
-    Créez le fichier .env à la racine du client et ajouter vos variables :
+    b. **Pour le front** :
+    Créer le fichier .env à la racine du client et ajouter vos variables :
     VITE_API_BASE_URL=http://localhost:6001/api/recipes
     VITE_API_BASE_PUBLIC=http://localhost:6001
 2. **Faites le seed de la base de donnée** :
@@ -53,10 +53,10 @@ En cours de construction
     Depuis le repertoire recette-backend
     ```bash
     node .\scripts\insertRecipes.js
-3. **Démarrez ensuite le serveur** :
+3. **Démarrer ensuite le serveur** :
     ```bash
     npm start
-4. **Démarrez le côté client** :
+4. **Démarrer le côté client** :
 Depuis le repertoire recette-client
     ```bash
     npm run dev
