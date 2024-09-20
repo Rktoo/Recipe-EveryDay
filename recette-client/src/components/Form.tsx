@@ -111,7 +111,7 @@ export default function Form() {
                 </div>
                 <div className="flex flex-col w-full">
                 <button
-                    className="flex justify-center items-center text-[#29323C] hover:border-[#29323C]"
+                    className="flex justify-center items-center bg-[#2FA855] text-white hover:border-[#29323C] outline-white"
                     type="submit">{!sending ? "Soumettre votre demande" : <img src="/src/assets/images/spinner_medium.png" alt="spinner"
                     className="w-6 h-6 animate-spin"
                     /> } </button>

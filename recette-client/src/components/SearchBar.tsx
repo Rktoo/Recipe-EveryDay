@@ -58,7 +58,7 @@ export default function SearchBar({ onSearch }: Props) {
     }, [query, isFocused])
 
     return (
-        <form onSubmit={handleSubmit} className="search-bar flex flex-row gap-2">
+        <form onSubmit={handleSubmit} className="search-bar max-sm:w-10/12 flex flex-row justify-center gap-2">
             <input
                 type="text"
                 value={query}
@@ -68,11 +68,11 @@ export default function SearchBar({ onSearch }: Props) {
                 placeholder="Rechercher des recettes..."
                 className="
                 search-input 
-                rounded-full w-[300px] 
+                rounded-full sm:w-[300px] max-sm:w-[150px]
                 backdrop-blur-[2px]
                  "
             />
-            <button type="submit" className="rounded-full bg-green-500 hover:bg-green-600 text-white focus:bg-green-600 focus:outline-green-800">
+            <button type="submit" className="max-sm:w-[100px] max-sm:text-sm flex justify-center items-center rounded-full bg-[#2FA855]/80 hover:bg-[#2FA855] text-white focus:bg-[#2FA855] focus:outline-green-800">
                 Rechercher
             </button>
         </form>

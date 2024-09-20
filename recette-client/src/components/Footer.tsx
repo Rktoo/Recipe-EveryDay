@@ -5,7 +5,7 @@ export default function Footer() {
   const date = new Date();
 
   return (
-    <footer className="fixed bottom-0 w-full border-t-2 text-white backdrop-blur-md">
+    <footer className="fixed bottom-0 w-full border-t-2 max-sm:text-sm text-white backdrop-blur-md">
       <div
         className="max-w-6xl mx-auto px-10 min-h-14 flex justify-start items-center text-start "
       >

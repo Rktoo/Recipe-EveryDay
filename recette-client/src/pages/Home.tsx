@@ -19,9 +19,9 @@ export default function Home() {
         if (subCategoriesRef.current) {
             gsap.fromTo(subCategoriesRef.current, {
                 opacity : 0.95,
-                y: 10
+                y: 0
             },{
-                duration : 0.4,
+                duration : 0.6,
                 opacity : 1,
                 y : -10,
                 ease : "elastic.out",
@@ -49,10 +49,10 @@ export default function Home() {
                     subCategories && subCategories.map((sub, index) => (
                         <div 
                         ref={el => (subCategoriesRef.current[index] = el!)}
-                        className="container-recipe w-[300px] flex flex-col justify-end items-end px-4 py-2 border-[1px] border-white backdrop-blur-md rounded-xl opacity-0" 
+                        className="container-recipe w-[300px] flex flex-col justify-between items-end px-4 py-2 border-[1px] border-white backdrop-blur-md rounded-xl opacity-0" 
                         key={sub.titre}>
-                            <p className="bg-">{sub.titre}</p>
-                            <Link to={sub.lien}><button className="text-[#29323C] hover:border-[#29323C]">Démarrer</button></Link>
+                            <p className="">{sub.titre}</p>
+                            <Link to={sub.lien}><button className=" bg-[#2FA855]/80 text-white/90 hover:border-[#29323C]">Démarrer</button></Link>
                         </div>
                     ))
                 }
